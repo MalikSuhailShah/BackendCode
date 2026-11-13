@@ -1,0 +1,35 @@
+@import "tailwindcss";
+@theme {
+  --color-night: #0f1318;
+  --color-panel: #181e26;
+  --color-line: #27303b;
+  --color-ink: #e9edf1;
+  --color-mute: #8b97a5;
+  --color-signal: #7c5cff;
+  --color-mint: #3ddba7;
+  --color-danger: #ff6b6b;
+  --font-display: "Bricolage Grotesque", system-ui, sans-serif;
+  --font-sans: "Figtree", system-ui, sans-serif;
+}
+body {
+  @apply bg-night text-ink font-sans antialiased;
+}
+:focus-visible {
+  outline: 2px solid var(--color-signal);
+  outline-offset: 2px;
+}
+.btn {
+  @apply inline-flex items-center justify-center gap-2 rounded-lg bg-signal px-4 py-2 text-sm font-semibold text-white transition hover:brightness-110 disabled:opacity-50;
+}
+.btn-ghost {
+  @apply bg-panel text-ink border border-line hover:bg-line;
+}
+.input {
+  @apply w-full rounded-lg border border-line bg-panel px-3 py-2 text-sm placeholder:text-mute focus:border-signal focus:outline-none;
+}
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none !important;
+    animation: none !important;
+  }
+}
